@@ -436,7 +436,7 @@
 </main>
 
 <script>
-  const API_BASE = 'http://localhost:8000';
+  const API_BASE = "https://plant-health-scanner.onrender.com/api";
   let selectedBase64 = null;
 
   // ── File Selection ──────────────────────────────────────────────────────────
@@ -503,7 +503,7 @@
         const formData = new FormData();
         formData.append("file", fileInput.files[0]);
 
-        const response = await fetch("http://localhost:8000/analyze", {
+        const response = await fetch("https://plant-health-scanner.onrender.com/analyze", {
             method: "POST",
             body: formData
         });
