@@ -1,5 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from PIL import Image
 import io
 
@@ -15,7 +16,7 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {"message": "Plant Health Scanner API Running"}
+    return FileResponse("index.html")
 
 @app.post("/analyze")
 async def analyze(file: UploadFile = File(...)):
